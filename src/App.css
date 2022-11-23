@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  max-width: 100%;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 200px repeat(1, 1fr);
+  grid-template-rows: 8rem auto 5rem;
+  grid-template-areas:
+    'header header '
+    'sidebar content'
+    'footer footer ';
+}
+
+nav {
+  grid-area: header;
+}
+main {
+  grid-area: content;
+}
+aside {
+  grid-area: sidebar;
+}
+footer {
+  grid-area: footer;
+}
+
+/**************************************************/
+:root {
+  --primary-color: rgb(250, 100, 63);
+  --primary-bg-color: rgb(209, 80, 41);
+  --border-color: rgb(213, 213, 213);
+  --btn-color: rgb(255, 240, 236);
+  --slider-bg-color: rgb(211, 211, 211);
+  --white-color: rgb(255, 255, 255);
+  --black-color: rgb(0, 0, 0);
+  --card-badge-bg-color: rgba(235, 71, 21, 0.651);
+  --footer-bg-color: rgba(0, 0, 0, 0.863);
+  --header-bg-color: rgb(255, 255, 254);
+  --form-bg-color: rgb(245, 243, 243);
+  --form-btn-color: rgb(116, 24, 2);
+  --grey-color: rgb(128, 128, 128);
+  --link-color: rgb(18, 166, 224);
+  --yellow-color: rgb(238, 255, 0);
+  --card-bg-color: rgb(240, 240, 240);
+  --primary-light-color: rgba(233, 77, 38, 0.781);
+}
+
+.toastify{
+  font-size: 1.5rem;
+}

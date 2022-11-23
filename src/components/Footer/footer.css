@@ -1,0 +1,72 @@
+
+.footer {
+  height: 21vh;
+  background-color: var(--footer-bg-color);
+  background-color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer--container {
+  width: 100%;
+}
+
+.footer--container .social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.media-links h2 {
+  color: rgb(206, 199, 199);
+}
+
+.footer-logo img {
+  color: var(--nav-logo-color);
+  text-decoration: none;
+  width: 10rem;
+  height: 4rem;
+  margin-top: 1rem;
+}
+
+.footer-info h3 {
+  margin: 0.6rem 0;
+  color: rgb(206, 199, 199);
+}
+
+.media-links .fab {
+  font-size: 2rem;
+  margin: 1rem;
+  color: var(--primary-color);
+}
+
+.media-links .fab:hover {
+  color: white;
+}
+
+.title-logo {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.8rem;
+  margin: 0 0.5rem;
+}
+
+.title-logo:hover{
+  color: var(--primary-color);
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+@media(max-width:400px){
+  .media-links{
+    padding-top: 1rem;
+  }
+  .media-links h2{
+    font-size: 1rem;
+  }
+}
