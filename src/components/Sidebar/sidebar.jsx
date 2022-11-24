@@ -40,24 +40,12 @@ const Sidebar=()=>{
           <h5 className="sidebar-h5">Sort By Time</h5>
           <ul>
             <li>
-              <input
-                type="radio"
-                className="sub-option"
-                
-              />
-              <label className="sidebar-label">
-                New to Old
-              </label>
+              <input type="radio" className="sub-option" />
+              <label className="sidebar-label">New to Old</label>
             </li>
             <li>
-              <input
-                type="radio"
-                className="sub-option"
-                
-              />
-              <label className="sidebar-label">
-                Old to New
-              </label>
+              <input type="radio" className="sub-option" />
+              <label className="sidebar-label">Old to New</label>
             </li>
           </ul>
         </div>
@@ -65,24 +53,24 @@ const Sidebar=()=>{
           <h5 className="sidebar-h5">Sort By Priority</h5>
           <ul>
             <li>
-              <input
-                type="radio"
-                className="sub-option"
-               
-              />
-              <label className="sidebar-label">
-                Low to High
-              </label>
+              <input type="radio" className="sub-option" />
+              <label className="sidebar-label">Low to High</label>
             </li>
             <li>
-              <input
-                type="radio"
-                className="sub-option"
-                
-              />
-              <label className="sidebar-label">
-                High to Low
-              </label>
+              <input type="radio" className="sub-option" />
+              <label className="sidebar-label">High to Low</label>
+            </li>
+          </ul>
+        </div>
+        <div className="sidebar-block">
+          <h5 className="sidebar-h5">MockAPI</h5>
+          <ul>
+            <li>
+              <input type="radio" className="sub-option" />
+              <label className="sidebar-label">Low to High</label>
+            </li>
+            <li>
+              <Link to="/mockman">MockAPI</Link>
             </li>
           </ul>
         </div>
