@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,useNavigate,useLocation } from 'react-router-dom';
 import './navbar.css';
 import '../../utilities/css/util.css';
 import { useAuth } from '../../context/authContext';
@@ -16,6 +16,7 @@ const NavBar = () => {
       state: { searchFor },
       dataDispatch,
     } = useDataContext();
+    const {pathname}=useLocation();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -48,7 +49,6 @@ const NavBar = () => {
         <label htmlFor="search-bar">
           {searchFor === '' ? <i className="bi bi-search"></i> : null}
         </label>
-        
       </div>
 
       <div className="right-nav">
@@ -56,19 +56,39 @@ const NavBar = () => {
           <Link to="/notes" className="icon">
             <span className="icon-badge">
               <i className="bi bi-file-text"></i>
-              <span className="icon-text">notes</span>
+              <span
+                className={
+                  pathname === '/notes' ? `icon-text active--tab` : 'icon-text'
+                }
+              >
+                notes
+              </span>
             </span>
           </Link>
           <Link to="/archive" className="icon">
             <span className="icon-badge">
               <i className="bi bi-archive-fill"></i>
-              <span className="icon-text">archives</span>
+              <span
+                className={
+                  pathname === '/archive'
+                    ? `icon-text active--tab`
+                    : 'icon-text'
+                }
+              >
+                archives
+              </span>
             </span>
           </Link>
           <Link to="/trash" className="icon">
             <span className="icon-badge">
               <i className="bi bi-trash3-fill"></i>
-              <span className="icon-text">trash</span>
+              <span
+                className={
+                  pathname === '/trash' ? `icon-text active--tab` : 'icon-text'
+                }
+              >
+                trash
+              </span>
             </span>
           </Link>
         </div>

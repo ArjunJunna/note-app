@@ -96,6 +96,10 @@
   font-size: 1.05rem;
 }
 
+.active--tab{
+  color: var(--primary-color);
+}
+
 @media (max-width: 400px) {
   .nav-logo img {
     width: 7rem;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './sidebar.css';
 import { useDataContext } from '../../context/dataContext';
 
@@ -115,11 +114,7 @@ const Sidebar = () => {
             </label>
           </div>
         </div>
-        <div className="sidebar-block">
-          <div>
-            <Link to="/mockman">MockAPI</Link>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
