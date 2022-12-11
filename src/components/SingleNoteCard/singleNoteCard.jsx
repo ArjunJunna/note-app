@@ -7,6 +7,11 @@ import {
   addNoteToArchivesHandler,
   restoreNoteFromArchivesDataHandler,
 } from '../../utilities/DataHandlers/archiveDataHandler';
+import {
+  addNoteToTrashHandler,
+  restoreNoteFromTrashDataHandler,
+  deleteNoteDataHandler,
+} from '../../utilities/DataHandlers/trashDataHandler';
 import { useAuth } from '../../context/authContext';
 import { useUserData } from '../../context/userDataContext';
 
@@ -21,6 +26,7 @@ const SingleNoteCard = ({ note, setEditNoteData, setShowModal }) => {
 
   const { pathname } = useLocation();
   const [fetchingArchives, setFetchingArchives] = useState(false);
+  const [fetchingTrash, setFetchingTrash] = useState(false);
 
   const editNoteDataHandler = e => {
     e.preventDefault();
@@ -91,7 +97,48 @@ const SingleNoteCard = ({ note, setEditNoteData, setShowModal }) => {
                 disabled={fetchingArchives}
               ></i>
             )}
-            {pathname === '/notes' && <i className="bi bi-trash3-fill"></i>}
+            {pathname === '/notes' && (
+              <i
+                className="bi bi-trash3-fill"
+                onClick={() =>
+                  addNoteToTrashHandler(
+                    note,
+                    token,
+                    userDataDispatch,
+                    setFetchingTrash
+                  )
+                }
+                disabled={fetchingTrash}
+              ></i>
+            )}
+            {pathname === '/trash' && (
+              <i
+                className="bi bi-trash3-fill"
+                onClick={() =>
+                  deleteNoteDataHandler(
+                    note,
+                    token,
+                    userDataDispatch,
+                    setFetchingTrash
+                  )
+                }
+                disabled={fetchingTrash}
+              ></i>
+            )}
+            {pathname === '/trash' && (
+              <i
+                className="bi bi-box-arrow-down-right"
+                onClick={() =>
+                  restoreNoteFromTrashDataHandler(
+                    note,
+                    token,
+                    userDataDispatch,
+                    setFetchingTrash
+                  )
+                }
+                disabled={fetchingTrash}
+              ></i>
+            )}
           </div>
         </div>
       </div>

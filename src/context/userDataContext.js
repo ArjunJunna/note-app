@@ -3,6 +3,7 @@ import { userDataReducer } from '../reducers/userDataReducer';
 import { useAuth } from './authContext';
 import { getNotesHandler } from '../utilities/DataHandlers/noteDataHandler';
 import { getArchivesHandler } from '../utilities/DataHandlers/archiveDataHandler';
+import { getTrashHandler } from '../utilities/DataHandlers/trashDataHandler';
 
 const userDataContext = createContext({});
 
@@ -22,6 +23,7 @@ function UserDataProvider({ children }) {
     if (isAuthorized) {
       getNotesHandler(token, userDataDispatch);
       getArchivesHandler(token, userDataDispatch);
+      getTrashHandler(token, userDataDispatch); 
     }
   }, [isAuthorized, token]);
   return (
