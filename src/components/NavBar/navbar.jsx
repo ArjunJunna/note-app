@@ -1,23 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import './navbar.css';
 import '../../utilities/css/util.css';
 import { useAuth } from '../../context/authContext';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
+import {useDataContext} from '../../context/dataContext';
 
 const NavBar = () => {
+  const {
+    auth: { isAuthorized },
+    setAuth,
+  } = useAuth();
+   const navigate = useNavigate();
+    const {
+      state: { searchFor },
+      dataDispatch,
+    } = useDataContext();
 
-  const {auth:{isAuthorized},setAuth}=useAuth();
-
-  const handleLogout=()=>{
-    localStorage.removeItem('token')
+  const handleLogout = () => {
+    localStorage.removeItem('token');
     setAuth({
       token: '',
       isAuthenticated: false,
     });
     toast.success('You have logged out successfully!!!');
-  }
-
+  };
 
   return (
     <nav className="navigation-hz">
@@ -28,11 +35,43 @@ const NavBar = () => {
       </div>
 
       <div className="nav__search">
-        <input type="text" placeholder="Search..." />
-        <i className="bi bi-search"></i>
+        <input
+          type="search"
+          placeholder="Search..."
+          id="search-bar"
+          value={searchFor}
+          onChange={e => {
+            navigate('/notes');
+            dataDispatch({ type: 'SEARCH', payload: e.target.value });
+          }}
+        />
+        <label htmlFor="search-bar">
+          {searchFor === '' ? <i className="bi bi-search"></i> : null}
+        </label>
+        
       </div>
 
       <div className="right-nav">
+        <div className="nav__links">
+          <Link to="/notes" className="icon">
+            <span className="icon-badge">
+              <i className="bi bi-file-text"></i>
+              <span className="icon-text">notes</span>
+            </span>
+          </Link>
+          <Link to="/archive" className="icon">
+            <span className="icon-badge">
+              <i className="bi bi-archive-fill"></i>
+              <span className="icon-text">archives</span>
+            </span>
+          </Link>
+          <Link to="/trash" className="icon">
+            <span className="icon-badge">
+              <i className="bi bi-trash3-fill"></i>
+              <span className="icon-text">trash</span>
+            </span>
+          </Link>
+        </div>
         {isAuthorized ? (
           <li onClick={handleLogout}>
             <Link className="link" to="/login">

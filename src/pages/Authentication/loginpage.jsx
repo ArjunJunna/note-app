@@ -11,7 +11,7 @@ const LoginPage = () => {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location?.state?.from?.pathname || '/home';
+  const from = location?.state?.from?.pathname || '/notes';
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -40,6 +40,7 @@ const LoginPage = () => {
         token: response?.data?.encodedToken,
         isAuthorized: true,
       });
+      console.log(response);
       toast.success('You are now successfully logged in!');
       navigate(from, { replace: true });
     } catch (err) {
