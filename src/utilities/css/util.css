@@ -201,12 +201,17 @@ main {
 }
 
 .main__container-content {
+  /*
   display: grid;
-  /*grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));*/
   grid-template-columns: repeat(3, 1fr);
-  /*justify-content: space-around;*/
   grid-row-gap: 3rem;
   margin: 0 0 1rem 0;
+  */
+  grid-row-gap: 2.5rem;
+  grid-column-gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 35rem));
+  padding: 1rem 0 1.7rem 1.7rem;
 }
 /******************************************/
 .card__container {
@@ -250,20 +255,7 @@ main {
   right: 0.5rem;
   margin: 0;
 }
-/*
-.card-header .card-heart {
-    background: none;
-    border: none;
-    border-radius: 0.2rem;
-    color: var(--grey-color);
-    font-size: 1.8rem;
-    font-weight: 700;
-    padding: 4px;
-    position: absolute;
-    right: 0.3rem;
-    top: 0.3rem;
-}
-*/
+
 .card__container .card-details {
   padding: 0;
 }
@@ -275,12 +267,6 @@ main {
 .card-details .detail-subheading {
   font-size: 1.2rem;
   font-weight: 500;
-}
-
-.price-segment {
-  color: var(--primary-color);
-  font-size: 1.6rem;
-  font-weight: 700;
 }
 
 .card__container .card-footer {
@@ -395,11 +381,56 @@ main {
   margin: 0 0.5rem;
 }
 
-.title-logo:hover{
+.title-logo:hover {
   color: var(--primary-color);
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
+
+.btn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.6rem;
+  color: var(--btn-color);
+  cursor: pointer;
+  display: block;
+  font-family: Roboto Mono, monospace;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.5rem;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn i {
+  margin-right: 0.2rem;
+}
+
+.note__btn-fixed {
+  position: fixed;
+  top: 14vh;
+  right: 2rem;
+}
+
+.info {
+  font-size: 1.5em;
+  font-weight: 550;
+  padding: 0 1rem;
+}
+
+.fall-back-text {
+  font-size: 1.6rem;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.loader--image {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
+

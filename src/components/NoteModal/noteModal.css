@@ -1,0 +1,166 @@
+.modal__container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: normal;
+  height: auto;
+}
+
+.modal-header {
+  width: 100%;
+}
+
+.modal-input {
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: var(--modal-bg-color);
+}
+
+.modal-content {
+  width: 100%;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 0.2rem 0.4rem;
+}
+
+.modal-options {
+  margin-left: 0.5rem;
+  padding: 0.6rem 0;
+}
+
+.modal-options i {
+  margin: 0 0.5rem;
+  padding: 1rem 0.1rem;
+  border-radius: 50%;
+  color: var(--grey-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.modal-actions {
+  padding-top: 0.6rem;
+}
+
+.modal-options i:hover {
+  color: var(--primary-color);
+}
+
+.modal-actions button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.btn-line {
+  all: unset;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.btn-modal {
+  background-color: var(--primary-color);
+  color: var(--btn-color);
+}
+.color-pallete {
+  position: absolute;
+  bottom: -5.1rem;
+  left: -0.5rem;
+  background-color: var(--modal-bg-color);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  padding: 0.8rem 0.5rem;
+  z-index: 2;
+}
+
+.tag-options {
+  position: absolute;
+  bottom: -9.9rem;
+  left: 4.5rem;
+  background-color: var(--modal-bg-color);
+  z-index: 2;
+  height: 9.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.tag-options div {
+  text-align: left;
+}
+.tag-options input[type='radio'] {
+  margin-right: 0.6rem;
+  accent-color: var(--primary-color);
+}
+
+.btn-color {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--black-color);
+  margin: 0.25rem;
+  padding: 0;
+  cursor: pointer;
+}
+.input-group {
+  display: flex;
+}
+.priority-options.input-group {
+  position: absolute;
+  bottom: -6rem;
+  left: -0.5rem;
+  margin: 0.5rem;
+  padding: 1rem 1.2rem;
+  box-shadow: var(--box-shadow);
+  z-index: 2;
+  background-color: var(--modal-bg-color);
+  border-radius: 5px;
+  flex-direction: row;
+}
+.priority-options label {
+  padding: 0 0.25rem;
+  font-size: 1.2rem;
+}
+.input-group input[type='radio'] {
+  accent-color: var(--primary-color);
+  padding: 0.25rem 0;
+}
+
+.priority-options input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mr {
+  margin-left: 1.2rem;
+}
+
+.primary-disabled{
+  background-color: green;
+}

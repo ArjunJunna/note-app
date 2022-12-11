@@ -16,7 +16,7 @@ import AuthorizedRoutes from '../routes/authorizedRoutes';
 function NavBarRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Notes />} />
       <Route path="/home" element={<Home />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
