@@ -78,7 +78,8 @@ const SingleNoteCard = ({ note, setEditNoteData, setShowModal }) => {
               ></i>
             )}
             {pathname === '/archive' && (
-              <button
+              <i
+                class="bi-box-arrow-down-right"
                 onClick={() =>
                   restoreNoteFromArchivesDataHandler(
                     note,
@@ -88,9 +89,7 @@ const SingleNoteCard = ({ note, setEditNoteData, setShowModal }) => {
                   )
                 }
                 disabled={fetchingArchives}
-              >
-                <i class="bi bi-arrow-bar-right"></i>
-              </button>
+              ></i>
             )}
             {pathname === '/notes' && <i className="bi bi-trash3-fill"></i>}
           </div>
