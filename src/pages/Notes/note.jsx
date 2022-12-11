@@ -15,7 +15,6 @@ import {
 
 const Notes = () => {
   const [showModal, setShowModal] = useState(false);
-  const [display, setDisplay] = useState('');
   const [editNoteData, setEditNoteData] = useState(null);
   const {
     state: { createdTime, priority, isLoading, selectedTags, searchFor },
