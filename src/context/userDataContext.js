@@ -1,8 +1,8 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import { userDataReducer } from '../reducers/userDataReducer';
 import { useAuth } from './authContext';
-import axios from 'axios';
 import { getNotesHandler } from '../utilities/DataHandlers/noteDataHandler';
+import { getArchivesHandler } from '../utilities/DataHandlers/archiveDataHandler';
 
 const userDataContext = createContext({});
 
@@ -17,31 +17,13 @@ function UserDataProvider({ children }) {
     trashData: [],
     isLoading: false,
   });
-/*
+  
   useEffect(() => {
     if (isAuthorized) {
-      (async function () {
-        try {
-          let response = await axios.get('/api/notes', {
-            headers: { authorization: token },
-          });
-          userDataDispatch({ type: 'GET_DATA' });
-          userDataDispatch({
-            type: 'SET_NOTES',
-            payload: response?.data?.notes,
-          });
-        } catch (error) {
-          alert(error.message);
-        }
-      })();
+      getNotesHandler(token, userDataDispatch);
+      getArchivesHandler(token, userDataDispatch);
     }
   }, [isAuthorized, token]);
-*/
-    useEffect(() => {
-      if (isAuthorized) {
-        getNotesHandler(token, userDataDispatch);
-      }
-    }, [isAuthorized, token]);
   return (
     <userDataContext.Provider value={{ userData, userDataDispatch }}>
       {children}
