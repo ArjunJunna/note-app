@@ -17,7 +17,9 @@ const Archive = () => {
           </div>
         </section>
       ) : (
-        <h1 className="fall-back-text">You haven't added any notes...</h1>
+        <h1 className="fall-back-text">
+          You haven't added any notes in Archive...
+        </h1>
       )}
     </>
   );
