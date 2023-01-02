@@ -18,24 +18,7 @@ const DataContextProvider = ({ children }) => {
     reset: false,
     searchFor: '',
   });
-/*
-  useEffect(() => {
-    (async function () {
-      try {
-        const response = await axios.get('/api/notes', {
-          headers: { authorization: token },
-        });
-        dataDispatch({ type: 'GET_DATA' });
-        const notesList = response.data.notes.map(note => {
-          return { ...note };
-        });
-        console.log(notesList);
-      } catch (err) {
-        alert(err.message);
-      }
-    })();
-  }, [token]);
-*/
+
   useEffect(() => {
     (async function () {
       try {
