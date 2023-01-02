@@ -1,7 +1,7 @@
 import React from 'react';
 import './noteModal.css';
 import { RichTextEditor } from '../RichTextEditor/richTextEditor';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef} from 'react';
 import dayjs from 'dayjs';
 import { useAuth } from '../../context/authContext';
 import { useDataContext } from '../../context/dataContext.js';
