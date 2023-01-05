@@ -51,55 +51,57 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="auth__container absolute-container">
-        <p className={errMsg ? 'errMsg' : 'offscreen'}>{errMsg}</p>
-        <h2 className="heading">Login</h2>
-        <form>
-          <div className="text-field">
-            <input
-              type="email"
-              required
-              className="form-input"
-              id="input--email"
-              onChange={e => setEmail(e.target.value)}
-              value={email}
-              autoComplete="off"
-              ref={emailRef}
-            />
-            <span></span>
-            <label>Email Address</label>
-          </div>
-          <div className="text-field">
-            <input
-              type="password"
-              ref={passwordRef}
-              required
-              className="form-input"
-              id="input--password"
-              onChange={e => setPassword(e.target.value)}
-              value={password}
-            />
-            <span></span>
-            <label>Password</label>
-          </div>
-          <button
-            className="form-btn primary-btn"
-            type="submit"
-            onClick={e => handleSubmit(e, email, password)}
-          >
-            Login
-          </button>
-          <button
-            className="form-btn primary-btn"
-            type="submit"
-            onClick={e => handleSubmit(e, 'rockybhai@kgf.in', 'Rocky@1999')}
-          >
-            Login as Guest
-          </button>
-          <Link to="/signup" className="center">
-            Create New Account
-          </Link>
-        </form>
+      <div className="auth__container">
+        <div className="auth">
+          <p className={errMsg ? 'errMsg' : 'offscreen'}>{errMsg}</p>
+          <h2 className="heading">Login</h2>
+          <form>
+            <div className="text-field">
+              <input
+                type="email"
+                required
+                className="form-input"
+                id="input--email"
+                onChange={e => setEmail(e.target.value)}
+                value={email}
+                autoComplete="off"
+                ref={emailRef}
+              />
+              <span></span>
+              <label>Email Address</label>
+            </div>
+            <div className="text-field">
+              <input
+                type="password"
+                ref={passwordRef}
+                required
+                className="form-input"
+                id="input--password"
+                onChange={e => setPassword(e.target.value)}
+                value={password}
+              />
+              <span></span>
+              <label>Password</label>
+            </div>
+            <button
+              className="form-btn primary-btn"
+              type="submit"
+              onClick={e => handleSubmit(e, email, password)}
+            >
+              Login
+            </button>
+            <button
+              className="form-btn primary-btn"
+              type="submit"
+              onClick={e => handleSubmit(e, 'rockybhai@kgf.in', 'Rocky@1999')}
+            >
+              Login as Guest
+            </button>
+            <Link to="/signup" className="center">
+              Create New Account
+            </Link>
+          </form>
+        </div>
       </div>
     </>
   );
